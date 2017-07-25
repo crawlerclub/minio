@@ -52,9 +52,14 @@ mc ls mygcs
 [2017-02-26 22:10:11 PST]     0B test-container1/
 ```
 
-### Known limitations
-[Limitations](https://github.com/minio/minio/blob/master/docs/gateway/gcs-limitations.md)
+### Unsupported Features
+Gateway inherits the following GCS limitations:
 
+* Maximum number of parts per upload is 1024.
+* No support for bucket policies yet.
+* No support for bucket notifications yet.
+* List Multipart Uploads and List Object parts always returns empty list. i.e Client will need to remember all the parts that it has uploaded and use it for Complete Multipart Upload
+ 
 ## Explore Further
 - [`mc` command-line interface](https://docs.minio.io/docs/minio-client-quickstart-guide)
 - [`aws` command-line interface](https://docs.minio.io/docs/aws-cli-with-minio)
